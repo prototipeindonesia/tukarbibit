@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TukarBibit — Bibit Bertukar, Kota Bertumbuh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===================== AUTH SCREEN ===================== -->
+<div id="authScreen" class="auth-screen">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <span class="logo-mark">🌱</span>
+      <h1>TukarBibit</h1>
+      <p class="tagline">Bibit bertukar, kota bertumbuh.</p>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-auth="login">Masuk</button>
+      <button class="auth-tab" data-auth="register">Daftar</button>
+    </div>
+
+    <form id="loginForm" class="auth-form">
+      <label>Nama pengguna
+        <input type="text" id="loginName" placeholder="Mis. Rina" required />
+      </label>
+      <label>Kota
+        <input type="text" id="loginCity" placeholder="Mis. Jakarta" required />
+      </label>
+      <button class="btn btn-primary btn-block" type="submit">Masuk</button>
+      <p class="auth-hint">Coba: <em>Rina</em> / <em>Jakarta</em> untuk masuk cepat.</p>
+    </form>
+
+    <form id="registerForm" class="auth-form hidden">
+      <label>Nama lengkap
+        <input type="text" id="regName" placeholder="Nama kamu" required />
+      </label>
+      <label>Kota
+        <input type="text" id="regCity" placeholder="Kota kamu" required />
+      </label>
+      <label>Jenis lahan
+        <select id="regLand">
+          <option value="Pot / Balkon">Pot / Balkon</option>
+          <option value="Rooftop">Rooftop</option>
+          <option value="Halaman">Halaman</option>
+          <option value="Kebun Komunitas">Kebun Komunitas</option>
+        </select>
+      </label>
+      <button class="btn btn-primary btn-block" type="submit">Buat Akun</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== MAIN APP ===================== -->
+<div id="app" class="app hidden">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="logo-mark small">🌱</span>
+      <h2>TukarBibit</h2>
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" id="btnPoints" title="Poin Bibit">
+        <span class="chip-points">🪙 <span id="pointsDisplay">0</span></span>
+      </button>
+      <button class="icon-btn" id="btnProfile" title="Profil">
+        <span class="avatar" id="topAvatar">R</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="mainContent" class="main"></main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-tab="home"><span>🏡</span><small>Beranda</small></button>
+    <button class="nav-btn" data-tab="explore"><span>🔍</span><small>Jelajah</small></button>
+    <button class="nav-btn fab-wrap" data-tab="add">
+      <span class="fab">＋</span><small>Tambah</small>
+    </button>
+    <button class="nav-btn" data-tab="swaps"><span>🔄</span><small>Tukar</small></button>
+    <button class="nav-btn" data-tab="guides"><span>📖</span><small>Panduan</small></button>
+  </nav>
+
+</div>
+
+<!-- ===================== MODAL ROOT ===================== -->
+<div id="modalRoot" class="modal-root hidden">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<!-- ===================== TOAST ===================== -->
+<div id="toast" class="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
